@@ -21,10 +21,12 @@ class MainPage: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(self.addBook))
+//        self.tableView.estimatedRowHeight = 200
+//        self.tableView.rowHeight = UITableViewAutomaticDimension
+        print("get data")
+        Books.myBooks.load()
         
-        HUD.flash(.Progress, delay: 1.0) { finished in
-            print("get data")
-            Books.myBooks.load()
+        HUD.flash(.Progress, delay: 5.0) { finished in
             self.tableView.reloadData()
         }
         
@@ -50,24 +52,22 @@ class MainPage: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        var count = 0
-        if !(Books.myBooks.bookArray == nil) {
-            count = (Books.myBooks.bookArray?.count)!
-        }
-    
-        return count
+        print("\(#function)")
+        print(Books.myBooks.bookArray.count)
+        return Books.myBooks.bookArray.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("bookCell", forIndexPath: indexPath)
-
-        cell.textLabel?.text = Books.myBooks.bookArray![indexPath.row].bookName
-
+        
+        let data = NSData(base64EncodedString: Books.myBooks.bookArray[indexPath.row].bookPic! , options:  NSDataBase64DecodingOptions())
+        cell.imageView?.image = UIImage(data: data!)
+        cell.textLabel?.text = Books.myBooks.bookArray[indexPath.row].bookName
+        
         return cell
     }
  
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

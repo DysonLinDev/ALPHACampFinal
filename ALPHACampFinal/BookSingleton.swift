@@ -8,10 +8,11 @@
 
 import Foundation
 import Firebase
+import PKHUD
 
 class Books {
-    var bookArray:[Book]?
-    private let myRef = Firebase(url: "https://shining-heat-7573.firebaseio.com/Books")
+    var bookArray:[Book] = []
+    private let myRef = Firebase(url: "https://shining-heat-7573.firebaseio.com")
     
     func load() {
         // Read data and react to changes
@@ -19,7 +20,7 @@ class Books {
         myRef.queryOrderedByChild("Book").observeEventType(.ChildAdded, withBlock: {
             snapshot in
             
-            print(snapshot)
+            //print(snapshot)
             
             let book = Book()
             book.bookIndex = snapshot.key
@@ -30,20 +31,22 @@ class Books {
             book.bookIntroUrl = snapshot.value.objectForKey("bookName") as? String
             book.bookInfo = snapshot.value.objectForKey("bookInfo") as? String
             
-            Books.myBooks.bookArray?.append(book)
+            Books.myBooks.bookArray.append(book)
+            
         })
+        
     }
     
     
-    func save() {
+    func save(bookName:String , bookPic:UIImage , bookShopAdd:String , bookShopTel:String , bookIntroUrl:String , bookInfo:String) {
         let index = self.getBookDataIndex()
         let book = Book()
-        book.bookName = "NAME890"
-        book.bookPic = "PICjkld"
-        book.bookShopAdd = ""
-        book.bookShopTel = ""
-        book.bookIntroUrl = "URL__123qwe"
-        book.bookInfo = "INFO__erds"
+        book.bookName = bookName
+        book.bookPic = UIImageJPEGRepresentation(bookPic, 1.0)?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions())
+        book.bookShopAdd = bookShopAdd
+        book.bookShopTel = bookShopTel
+        book.bookIntroUrl = bookIntroUrl
+        book.bookInfo = bookInfo
         
         let saveRef = myRef.childByAppendingPath(String(index))
         saveRef.setValue(book.convertToDictonary())
@@ -73,8 +76,19 @@ class Books {
         }
     }
     
+    func initBookData() {
+        for i in 1...5 {
+            self.save("BookName" + String(i) ,
+                      bookPic: UIImage(named: "warrior")!,
+                      bookShopAdd: "ShopAdd" + String(i),
+                      bookShopTel: "ShopTel" + String(i),
+                      bookIntroUrl: "IntroUrl" +  String(i),
+                      bookInfo: "Info" + String(i))
+        }
+    }
+    
     init() {
-     self.initBookDataIndex()
+        self.initBookDataIndex()
     }
     
     static let myBooks = Books()
