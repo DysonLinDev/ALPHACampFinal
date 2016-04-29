@@ -18,13 +18,20 @@ class MainPage: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(self.addBook))
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    func addBook() {
+        
+    }
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
