@@ -28,7 +28,8 @@ class MainPage: UITableViewController {
     }
 
     func addBook() {
-        
+        let addBookController = self.storyboard?.instantiateViewControllerWithIdentifier("AddBook") as! AddBook
+        self.navigationController?.pushViewController(addBookController, animated: true)
     }
     
     
