@@ -37,6 +37,34 @@
             </objects>
             <point key="canvasLocation" x="1368" y="303"/>
         </scene>
+        <!--Add Book-->
+        <scene sceneID="aQT-N8-3Vy">
+            <objects>
+                <tableViewController id="sie-QZ-hBt" customClass="AddBook" customModule="ALPHACampFinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="v6R-5b-wFk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="GmF-Nf-UUE">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GmF-Nf-UUE" id="WIA-Ec-r3V">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sie-QZ-hBt" id="KIM-W0-9JN"/>
+                            <outlet property="delegate" destination="sie-QZ-hBt" id="lgr-OS-rv6"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Q6-6l-4HG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1368" y="1052"/>
+        </scene>
         <!--Book Detail-->
         <scene sceneID="Fis-76-q3x">
             <objects>
