@@ -14,6 +14,7 @@
 		9FE461011CD335770008D2FC /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE461001CD335770008D2FC /* MainPage.swift */; };
 		9FE461031CD335DE0008D2FC /* BookDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE461021CD335DE0008D2FC /* BookDetail.swift */; };
 		9FE461051CD3383D0008D2FC /* AddBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE461041CD3383D0008D2FC /* AddBook.swift */; };
+		9FE461071CD338AD0008D2FC /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE461061CD338AD0008D2FC /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		9FE461001CD335770008D2FC /* MainPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 		9FE461021CD335DE0008D2FC /* BookDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetail.swift; sourceTree = "<group>"; };
 		9FE461041CD3383D0008D2FC /* AddBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBook.swift; sourceTree = "<group>"; };
+		9FE461061CD338AD0008D2FC /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				9FE461001CD335770008D2FC /* MainPage.swift */,
 				9FE461021CD335DE0008D2FC /* BookDetail.swift */,
 				9FE461041CD3383D0008D2FC /* AddBook.swift */,
+				9FE461061CD338AD0008D2FC /* Book.swift */,
 				9FE460F11CD328EB0008D2FC /* Main.storyboard */,
 				9FE460F41CD328EB0008D2FC /* Assets.xcassets */,
 				9FE460F61CD328EB0008D2FC /* LaunchScreen.storyboard */,
@@ -146,6 +149,7 @@
 				9FE461051CD3383D0008D2FC /* AddBook.swift in Sources */,
 				9FE460EE1CD328EB0008D2FC /* AppDelegate.swift in Sources */,
 				9FE461011CD335770008D2FC /* MainPage.swift in Sources */,
+				9FE461071CD338AD0008D2FC /* Book.swift in Sources */,
 				9FE461031CD335DE0008D2FC /* BookDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
