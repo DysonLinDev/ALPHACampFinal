@@ -20,6 +20,7 @@ class MainPage: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(self.addBook))
+        Books.myBooks.load()
     }
     
     override func didReceiveMemoryWarning() {
