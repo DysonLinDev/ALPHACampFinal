@@ -85,9 +85,11 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-ALPHACampFinal/Firebase.framework"
+  install_framework "Pods-ALPHACampFinal/PKHUD.framework"
   install_framework "Pods-ALPHACampFinal/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-ALPHACampFinal/Firebase.framework"
+  install_framework "Pods-ALPHACampFinal/PKHUD.framework"
   install_framework "Pods-ALPHACampFinal/SwiftyJSON.framework"
 fi

@@ -6,5 +6,5 @@
 target 'ALPHACampFinal' do
 	pod 'Firebase', '>= 2.5.1'
 	pod 'SwiftyJSON'
+	pod 'PKHUD'
 end
-

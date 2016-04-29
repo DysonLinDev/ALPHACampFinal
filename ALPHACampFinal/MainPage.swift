@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class MainPage: UITableViewController {
 
@@ -20,7 +21,13 @@ class MainPage: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(self.addBook))
-        Books.myBooks.load()
+        
+        HUD.flash(.Progress, delay: 1.0) { finished in
+            print("get data")
+            Books.myBooks.load()
+            self.tableView.reloadData()
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,23 +45,28 @@ class MainPage: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        var count = 0
+        if !(Books.myBooks.bookArray == nil) {
+            count = (Books.myBooks.bookArray?.count)!
+        }
+    
+        return count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("bookCell", forIndexPath: indexPath)
 
-        // Configure the cell...
+        cell.textLabel?.text = Books.myBooks.bookArray![indexPath.row].bookName
 
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
